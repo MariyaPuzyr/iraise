@@ -1,0 +1,321 @@
+.how-work {
+  padding-top: 105px;
+  padding-bottom: 75px;
+  overflow: hidden;
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    &__description {
+      font-size: 16px;
+      line-height: 30px;
+      font-family: $font-exo-l;
+      max-width: 310px;
+      margin-left: 30px;
+    }
+    &s {
+      display: flex;
+      justify-content: center;
+      margin-top: 130px;
+      &__logo {
+        display: flex;
+        width: 312px;
+        height: 312px;
+        border-radius: 100%;
+        align-items: center;
+        background-image: -moz-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+        background-image: -webkit-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+        background-image: -ms-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+        justify-content: center;
+        z-index: 1;
+        img {
+          width: 130px;
+          height: 132px;
+          position: relative;
+          z-index: 1;
+        }
+      }
+      &__border {
+        &--small {
+          border: 3px solid $default;
+          width: 250px;
+          height: 250px;
+          position: relative;
+          border-radius: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &::before {
+            content: '';
+            width: 239px;
+            height: 239px;
+            background: $default;
+            position: absolute;
+            z-index: 1;
+            border-radius: 100%;
+          }
+          &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: -moz-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+            background-image: -webkit-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+            background-image: -ms-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 100%;
+          }
+        }
+      }
+      .circle {
+        overflow: hidden;
+        position: absolute;
+        width: 180px;
+        height: 369px;
+        right: -30px;
+        border-top-right-radius: 180px;
+        border-bottom-right-radius: 180px;
+        border: 3px solid #fff;
+        @keyframes circle {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      }
+      &__body {
+        position: relative;
+      }
+    }
+    .step-position {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font-size: 51px;
+      font-family: $font-exo-b;
+      line-height: normal;
+      position: absolute;
+    }
+    &.step {
+      &-one {
+        margin-left: 60px;
+        .how-work__item__img,
+        .how-work__item__img::before,
+        .circle--small,
+        .how-work__item__position,
+        .icon {
+          background: rgb(235, 85, 23);
+          background: -moz-linear-gradient(top, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
+          background: -webkit-linear-gradient(top, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
+          background: linear-gradient(to bottom, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
+        }
+
+        .how-work__item__position {
+          color: rgb(235, 85, 23);
+          top: -60px;
+        }
+        .step-position {
+          width: 161px;
+          height: 98px;
+          left: -155px;
+          top: 65px;
+        }
+        .icon {
+          width: 50px;
+          height: 53px;
+          -webkit-mask-image: url('../img/svg/1step.svg');
+        }
+      }
+      &-two {
+        margin-left: 155px;
+        .how-work__item__img,
+        .how-work__item__img::before,
+        .circle--small,
+        .how-work__item__position,
+        .icon {
+          background: rgb(206, 67, 57);
+          background: -moz-linear-gradient(top, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
+          background: -webkit-linear-gradient(top, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
+          background: linear-gradient(to bottom, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
+        }
+
+        .how-work__item__position {
+          color: rgb(206, 67, 57);
+          top: -60px;
+        }
+        .step-position {
+          width: 149px;
+          height: 48px;
+          left: -145px;
+          top: 65px;
+        }
+        .icon {
+          width: 55px;
+          height: 55px;
+          -webkit-mask-image: url('../img/svg/2step.svg');
+        }
+      }
+      &-three {
+        margin-left: 160px;
+        .how-work__item__img,
+        .how-work__item__img::before,
+        .circle--small,
+        .how-work__item__position,
+        .icon {
+          background: rgb(171, 39, 72);
+          background: -moz-linear-gradient(top, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
+          background: -webkit-linear-gradient(top, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
+          background: linear-gradient(to bottom, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
+        }
+
+        .how-work__item__position {
+          color: rgb(171, 39, 72);
+          top: -20px;
+        }
+        .step-position {
+          width: 149px;
+          height: 46px;
+          left: -145px;
+          top: 25px;
+        }
+        .icon {
+          width: 54px;
+          height: 61px;
+          -webkit-mask-image: url('../img/svg/3step.svg');
+        }
+      }
+      &-four {
+        margin-left: 114px;
+        .how-work__item__img,
+        .how-work__item__img::before,
+        .circle--small,
+        .how-work__item__position,
+        .icon {
+          background: rgb(162, 41, 107);
+          background: -moz-linear-gradient(top, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
+          background: -webkit-linear-gradient(top, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
+          background: linear-gradient(to bottom, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
+        }
+
+        .how-work__item__position {
+          color: rgb(162, 41, 107);
+          top: 32px;
+        }
+        .step-position {
+          width: 161px;
+          height: 98px;
+          left: -160px;
+          top: -30px;
+        }
+        .icon {
+          width: 57px;
+          height: 57px;
+          -webkit-mask-image: url('../img/svg/4step.svg');
+        }
+      }
+    }
+    &__img {
+      width: 133px;
+      height: 133px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &::after {
+        content: '';
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        background: $default;
+      }
+      &::before {
+        content: '';
+        width: 106px;
+        height: 106px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .icon {
+        position: relative;
+        z-index: 1;
+        -webkit-mask-size: cover;
+      }
+      .circle--small {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        border: 1px solid $default;
+      }
+    }
+
+    &__position {
+      text-transform: uppercase;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      padding-right: 20px;
+      position: relative;
+    }
+    .position {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__top {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 312px;
+  }
+}
+
+@media (max-width: 991px) {
+  .how-work{
+    &__item{
+      &s {
+        flex-direction: column;
+        margin-top: 30px;
+        &__logo {
+          width: 290px;
+          height: 290px;
+          margin-bottom: 20px;
+        }
+      }
+      .position {
+        display: none;
+      }
+      .step-position {
+        position: initial;
+        width: auto !important;
+        height: auto !important;
+      }
+      &.step-one,
+      &.step-two,
+      &.step-three,
+      &.step-four {
+        margin-left: 0;
+        flex-wrap: wrap;
+      }
+      &__position {
+        position: initial;
+        width: auto;
+        height: auto;
+      }
+      &__description {
+        max-width: 260px;
+      }
+    }
+    &__top {
+      width: 100%;
+      margin: 0 auto;
+      justify-content: center;
+      .circle {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.about {
+  &-info-top {
+    background: rgb(238, 238, 238);
+    background: -moz-linear-gradient(45deg, rgba(238, 238, 238, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(238, 238, 238, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(45deg, rgba(238, 238, 238, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    color: $default;
+    padding-top: 95px;
+    &__body {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+      &::before {
+        content: '';
+        width: 23px;
+        height: 5px;
+        background: $default;
+      }
+      h3 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 36px;
+        font-family: $font-exo-m;
+      }
+      p {
+        @extend .text;
+      }
+    }
+  }
+  &-full-description {
+    text-align: center;
+    color: $white;
+    position: relative;
+    padding-bottom: 150px;
+    &::before {
+      content: '';
+      width: 104%;
+      height: 100%;
+      border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+      background: #98257c;
+      position: absolute;
+      top: 0;
+      left: -2%;
+    }
+    .u-play-style {
+      margin-top: -46px;
+      width: 92px;
+      height: 92px;
+
+      .u-play-video-circle-rotate {
+        background-size: 68px;
+      }
+    }
+    &__body {
+      h3 {
+        margin-top: 40px;
+        font-size: 20px;
+        font-family: $font-exo-m;
+        line-height: normal;
+        margin-bottom: 10px;
+      }
+      p {
+        @extend .text;
+      }
+      .blockquote {
+        position: relative;
+        font-family: $font-exo-l;
+        font-style: italic;
+        max-width: 645px;
+        display: flex;
+        margin: auto;
+        &::before {
+          content: '';
+          background: url('/img/blockquote-ico.png');
+          width: 16px;
+          height: 14px;
+          flex: 1 0 auto;
+        }
+      }
+    }
+  }
+}

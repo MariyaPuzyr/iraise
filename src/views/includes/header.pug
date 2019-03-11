@@ -1,0 +1,47 @@
+nav.navbar.navbar-expand-lg.fixed-top.flex-wrap.px-0.p-md-0
+  .container.navbar-top.align-items-end.align-items-md-center
+    #nav-icon3.navbar-toggler.collapsed(data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse')
+      span
+      span
+      span
+      span
+
+    a.navbar-brand(href='/').d-md-none
+      img.header-logo(src='img/small-logo.png')
+    #navbarCollapse.collapse.navbar-collapse.header-top
+      .header-top__items
+        a.navbar-brand(href='#').d-none.d-md-block
+          img.header-logo(src='img/small-logo.png')
+        .header-top__phone Горячая линия:
+          span 8 800 535-55-55
+        ul.header-top__social
+          li
+            a(href='#')
+              span.vk
+          li
+            a(href='#')
+              span.telegram
+          li
+            a(href='#')
+              span.youtube
+          li
+            a(href='#')
+              span.instagram
+        .header-top__personal Личный кабинет
+
+
+      ul.navbar-nav
+        li.nav-item.active
+          a.nav-link(href='/') Главная
+        li.nav-item
+          a.nav-link(href='profitability.html') Доходность
+        li.nav-item
+          a.nav-link(href='about.html') О Компании
+        li.nav-item
+          a.nav-link(href='#') Контакты
+    .nav-item.dropdown
+      #lang.nav-link.dropdown-toggle(data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Русский язык
+      .dropdown-menu.dropdown-menu-lg-right(aria-labelledby="lang")
+        a.dropdown-item(href='#') Русский язык
+        a.dropdown-item(href='#') Английский язык
+
