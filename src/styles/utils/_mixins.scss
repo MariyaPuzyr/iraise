@@ -1,10 +1,6 @@
 @mixin adapt_to($screen) {
   @if $screen == "wide_screen" {
-    @media (min-width: 1441px){
-      @content
-    }
-  } @else if $screen == "laptop" {
-    @media (max-width: 1440px){
+    @media (min-width: 1441px) {
       @content
     }
   } @else if $screen == "tablet_landscape_great" {
@@ -39,6 +35,18 @@
     @media (max-width: 500px) and (orientation: portrait) {
       @content
     }
+  } @else if $screen == "desktop" {
+    @media (max-width: 991px) {
+      @content
+    }
+  } @else if $screen == "laptop-big" {
+    @media (max-width: 1199px) {
+      @content
+    }
+  } @else if $screen == "laptop" {
+    @media (min-width: 1024px) and (max-width: 1439px) {
+      @content
+    }
   } @else if $screen == "tablet" {
     @media (max-width: 1023px) {
       @content
@@ -53,36 +61,3 @@
     }
   }
 }
-
-
-// adaptive
-@mixin desktop {
-  @media (min-width: 1440px) {
-    @content;
-  }
-}
-
-@mixin laptop {
-  @media (min-width: 1024px) and (max-width: 1439px) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media (max-width: 1023px) {
-    @content;
-  }
-}
-@mixin large-phone {
-  @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin mobile {
-  @media (max-width: 568px) {
-    @content;
-  }
-}
-
-

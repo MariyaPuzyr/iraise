@@ -32,6 +32,9 @@
     color: $white;
     position: relative;
     padding-bottom: 150px;
+    @include adapt_to('large-phone') {
+      padding-bottom: 50px;
+    }
     &::before {
       content: '';
       width: 104%;
@@ -41,6 +44,11 @@
       position: absolute;
       top: 0;
       left: -2%;
+      @include adapt_to('tablet') {
+        border-radius: 0;
+        width: 100%;
+        left: 0;
+      }
     }
     .u-play-style {
       margin-top: -46px;
@@ -76,6 +84,10 @@
           height: 14px;
           flex: 1 0 auto;
         }
+      }
+      @include adapt_to('laptop') {
+        width: 80%;
+        margin: auto;
       }
     }
   }

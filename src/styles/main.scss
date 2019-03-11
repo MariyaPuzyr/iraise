@@ -6,7 +6,6 @@
 @import "includes/footer";
 @import "components/component";
 @import "sections/section";
-@import "components/about-description";
 
 
 @import "libs";
@@ -31,6 +30,9 @@ body {
 .outer-indent {
 	margin-top: 220px;
 	position: relative;
+	@include adapt_to('desktop') {
+		margin-top: 110px;
+	}
 }
 
 .default-btn {

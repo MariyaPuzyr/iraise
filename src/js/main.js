@@ -209,3 +209,29 @@ if ($(window).width() < 768) {
 
 /* init WOW */
 new WOW().init();
+
+
+function autoType(elementClass, typingSpeed){
+  var thhis = $(elementClass);
+  thhis = thhis.find(".team-title__typing");
+  var text = thhis.text().trim().split('');
+  var amntOfChars = text.length;
+  var newString = "";
+  thhis.text("|");
+  setTimeout(function(){
+    thhis.css("opacity",1);
+    thhis.text("");
+    for(var i = 0; i < amntOfChars; i++){
+      (function(i,char){
+        setTimeout(function() {
+          newString += char;
+          thhis.text(newString);
+        },i*typingSpeed);
+      })(i+1,text[i]);
+    }
+  },1500);
+}
+
+$(document).ready(function(){
+  autoType(".team-title",200);
+});

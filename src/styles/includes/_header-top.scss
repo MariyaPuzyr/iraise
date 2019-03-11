@@ -11,6 +11,9 @@
     line-height: 30px;
     font-family: $font-exo-l;
     padding-left: 65px;
+    @include adapt_to('laptop-big') {
+      padding-left: 15px;
+    }
     span {
       font-family: $font-exo-m;
       font-size: 24px;
@@ -29,6 +32,9 @@
     &:hover {
       box-shadow: 0 10px 20px 0 rgba(251, 93, 6, 0.4);
     }
+    @include adapt_to('laptop-big') {
+      font-size: 16px;
+    }
   }
   &__social {
     list-style: none;
@@ -38,6 +44,10 @@
     border-right: 1px solid $white;
     padding-left: 45px;
     padding-right: 45px;
+    @include adapt_to('laptop-big') {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
     a {
       display: flex;
       align-items: center;

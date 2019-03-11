@@ -8,3 +8,20 @@ body {
   font-family: $font-exo;
   margin-bottom: 20px;
 }
+.position {
+  position: relative;
+  z-index: 1;
+}
+
+.stretch {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+.center-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

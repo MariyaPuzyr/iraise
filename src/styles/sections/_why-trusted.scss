@@ -15,6 +15,7 @@
     align-items: center;
     margin: auto auto 20px;
     max-width: 450px;
+    transition: all 0.3s ease;
     p {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -100,22 +101,36 @@
           height: 100%;
         }
       }
-
-      &:hover {
-        cursor: pointer;
-        .file-ico {
-          background: #52ac62;
+    }
+    &:hover {
+      cursor: pointer;
+      &.file-item {
+        a {
+          color: #52ac62;
         }
-        .teamwork-ico {
-          background: #f67a2f;
+      }
+      &.teamwork-item {
+        a {
+          color: #f67a2f;
         }
-        .analysis-ico {
-          background: #5a95e5;
+      }
+      &.analysis-item {
+        a {
+          color: #5a95e5;
         }
-        .icon {
-          animation-name: zoomIn;
-          transition-delay: inherit;
-        }
+      }
+      .file-ico {
+        background: #52ac62;
+      }
+      .teamwork-ico {
+        background: #f67a2f;
+      }
+      .analysis-ico {
+        background: #5a95e5;
+      }
+      .icon {
+        animation-name: zoomIn;
+        transition-delay: inherit;
       }
     }
   }
