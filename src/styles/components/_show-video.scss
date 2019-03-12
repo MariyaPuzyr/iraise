@@ -1,5 +1,6 @@
 .show-video {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   bottom: 25px;
   left: 50px;
   width: 300px;
@@ -56,15 +57,21 @@
   }
   &__modal.modal-dialog {
     max-width: 90%;
+    height: 90vh;
     .modal-content {
       border-radius: 0;
       border: none;
       background: rgba($default, .9);
+      height: 100%;
+      iframe {
+        height: calc(100% - 27px - 1rem);
+      }
     }
     .modal-title {
       font-size: 18px;
       font-family: $font-exo-m;
       margin-bottom: 15px;
+      cursor: pointer;
     }
     .close {
       opacity: .7;

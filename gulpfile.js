@@ -126,7 +126,15 @@ gulp.task('scripts', function () {
       }))
       .pipe(browsersync.stream());
 });
-
+gulp.task('copyScripts', function () {
+  return gulp.src([paths.scripts.watch])
+      // .pipe(concat('main.min.js'))
+      .pipe(gulp.dest(paths.scripts.dist))
+      .pipe(debug({
+        "title": "JS files COPY"
+      }))
+      .pipe(browsersync.stream());
+});
 gulp.task('libs', function () {
   return gulp.src([
     './node_modules/jquery/dist/jquery.min.js',
@@ -201,6 +209,7 @@ gulp.task('watch',
           'images',
           'fonts',
           'sprites',
+          'copyScripts',
           'libs'
         ],
         gulp.parallel('watchCode', 'server'))

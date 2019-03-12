@@ -28,10 +28,10 @@ body {
 }
 
 .outer-indent {
-	margin-top: 220px;
+	margin-top: 75px;
 	position: relative;
 	@include adapt_to('desktop') {
-		margin-top: 110px;
+		margin-top: 75px;
 	}
 }
 

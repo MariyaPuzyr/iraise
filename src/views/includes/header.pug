@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand-lg.fixed-top.flex-wrap.px-0.p-lg-0
+nav.navbar.navbar-expand-lg.flex-wrap.px-0.p-lg-0
   .container.navbar-top.align-items-end.align-items-md-center
     #nav-icon3.navbar-toggler.collapsed(data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse')
       span
@@ -9,26 +9,27 @@ nav.navbar.navbar-expand-lg.fixed-top.flex-wrap.px-0.p-lg-0
     a.navbar-brand(href='/').d-lg-none
       img.header-logo(src='img/small-logo.png')
     #navbarCollapse.collapse.navbar-collapse.header-top
-      .header-top__items
-        a.navbar-brand(href='#').d-none.d-lg-block
-          img.header-logo(src='img/small-logo.png')
-        .header-top__phone Горячая линия:
-          span 8 800 535-55-55
-        ul.header-top__social
-          li
-            a(href='#')
-              span.vk
-          li
-            a(href='#')
-              span.telegram
-          li
-            a(href='#')
-              span.youtube
-          li
-            a(href='#')
-              span.instagram
-        .header-top__support Тех. поддержка:
-          a(href='mailto:info@iraise@gmail.com') info@iraise@gmail.com
+      .header-top__items.fixed-top
+        .container.d-flex.align-items-baseline.justify-content-between
+          a.navbar-brand(href='#').d-none.d-lg-block
+            img.header-logo(src='img/small-logo.png')
+          .header-top__phone Горячая линия:
+            span 8 800 535-55-55
+          ul.header-top__social
+            li
+              a(href='#')
+                span.vk
+            li
+              a(href='#')
+                span.telegram
+            li
+              a(href='#')
+                span.youtube
+            li
+              a(href='#')
+                span.instagram
+          .header-top__support Тех. поддержка:
+            a(href='mailto:info@iraise@gmail.com') info@iraise@gmail.com
 
 
       ul.navbar-nav
