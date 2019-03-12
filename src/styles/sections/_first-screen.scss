@@ -18,8 +18,8 @@
     background: linear-gradient(to right, #161719 0%, #ffffff 50%, #161719 100%);
   }
   .big-logo {
-    width: 161px;
-    height: 163px;
+    width: 100px;
+    height: 102px;
     margin: auto;
     position: relative;
     z-index: 10;
@@ -28,12 +28,15 @@
     display: flex;
   }
   h1 {
-    font-size: 36px;
+    font-size: 24px;
     line-height: normal;
     font-family: $font-exo-l;
-    max-width: 640px;
+    max-width: 425px;
     text-align: center;
     margin: 40px auto;
+  }
+  .default-btn {
+    margin-bottom: 120px;
   }
 }
 

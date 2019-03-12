@@ -7,30 +7,31 @@
   flex-wrap: wrap;
   position: relative;
   &__phone {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 30px;
     font-family: $font-exo-l;
-    padding-left: 65px;
+    padding-left: 53px;
     @include adapt_to('laptop-big') {
       padding-left: 15px;
     }
     span {
       font-family: $font-exo-m;
-      font-size: 24px;
+      font-size: 18px;
       padding-left: 10px;
     }
   }
   &__personal {
-    font-size: 20px;
+    font-size: 14px;
     font-family: $font;
-    padding: 12px 26px;
+    padding: 10px 20px;
     line-height: normal;
     border: 1px solid $orange;
     border-radius: 50px;
     transition: all 0.3s ease;
     cursor: pointer;
     &:hover {
-      box-shadow: 0 10px 20px 0 rgba(251, 93, 6, 0.4);
+      background: $orange;
+      color: $white;
     }
     @include adapt_to('laptop-big') {
       font-size: 16px;
@@ -42,8 +43,8 @@
     display: flex;
     border-left: 1px solid $white;
     border-right: 1px solid $white;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 42px;
+    padding-right: 41px;
     @include adapt_to('laptop-big') {
       padding-left: 5px;
       padding-right: 5px;
@@ -52,13 +53,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 15px;
+      margin-right: 11px;
       border: 1px solid $white;
-      width: 42px;
-      height: 42px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       transition: all 0.3s ease;
       &:hover, &:active {
+        background: $white;
         .vk {
           background: #4d75a3;
         }
@@ -84,31 +86,46 @@
     }
     .vk {
       -webkit-mask-image: url('../img/svg/vk.svg');
-      mask-size: 14px 8px;
-      width: 14px;
-      height: 8px;
+      mask-size: 12px 7px;
+      width: 12px;
+      height: 7px;
     }
     .telegram {
       -webkit-mask-image: url('../img/svg/telegram.svg');
-      mask-size: 13px 12px;
-      width: 13px;
-      height: 12px;
+      mask-size: 11px 11px;
+      width: 11px;
+      height: 11px;
     }
     .youtube {
       -webkit-mask-image: url('../img/svg/youtube.svg');
-      mask-size: 14px 11px;
-      width: 14px;
-      height: 11px;
+      mask-size: 11px 10px;
+      width: 11px;
+      height: 10px;
     }
     .instagram {
       -webkit-mask-image: url('../img/svg/instagram.svg');
-      mask-size: 16px 16px;
-      width: 16px;
-      height: 16px;
+      mask-size: 13px 13px;
+      width: 13px;
+      height: 13px;
     }
     li {
       &:last-child a:last-child {
         margin-right: 0;
+      }
+    }
+  }
+  &__support {
+    font-family: $font-exo-l;
+    font-size: 14px;
+    line-height: 26px;
+    a {
+      transition: all 0.3s ease;
+      color: $white;
+      font-size: 18px;
+      margin-left: 3px;
+      &:hover {
+        color: $orange;
+        text-decoration: none;
       }
     }
   }

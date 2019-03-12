@@ -68,16 +68,16 @@ body {
 	}
 }
 .mouse {
-	animation: scroll 1.3s ease-out infinite forwards;
+	animation: scroll 2.5s ease-out infinite forwards;
 	background: url('../img/mouse.png');
 	cursor: pointer;
 	margin: auto;
-	width: 30px;
-	height: 55px;
+	width: 20px;
+	height: 36px;
 	background-size: cover;
-	bottom: 40px;
+	bottom: 50px;
 	position: absolute;
-	left: calc(50% - 15px);
+	left: calc(50% - 10px);
 }
 
 h2 {
