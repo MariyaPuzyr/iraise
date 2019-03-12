@@ -235,3 +235,7 @@ function autoType(elementClass, typingSpeed){
 $(document).ready(function(){
   autoType(".team-title",200);
 });
+
+$('.show-video__already-seen').click(function () {
+  $('.show-video').hide();
+});
