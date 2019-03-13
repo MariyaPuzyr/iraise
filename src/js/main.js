@@ -1,52 +1,4 @@
 /* body animation */
-/*particlesJS("particles-js", {
-  "particles": {
-    "number": {"value": 400, "density": {"enable": true, "value_area": 800}},
-    "color": {"value": ["#ff6000", "#972279"]},
-    "shape": {
-      "type": "circle",
-      "stroke": {"width": 0, "color": "#fff5f5"},
-      "polygon": {"nb_sides": 5},
-      "image": {"src": "img/github.svg", "width": 100, "height": 100}
-    },
-    "opacity": {"value": 0.5, "random": true, "anim": {"enable": false, "speed": 1, "opacity_min": 0.1, "sync": false}},
-    "size": {"value": 10, "random": true, "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}},
-    "line_linked": {"enable": false, "distance": 500, "color": "#ffffff", "opacity": 0.4, "width": 2},
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "top-left",
-      "random": true,
-      "straight": true,
-      "out_mode": "bounce",
-      "bounce": false,
-      "attract": {"enable": true, "rotateX": 10000, "rotateY": 10000}
-    }
-  },
-  "interactivity": {
-    "detect_on": "window",
-    "events": {
-      "onhover": {"enable": false, "mode": "grab"},
-      "onclick": {"enable": true, "mode": "push"},
-      "resize": true
-    },
-    "modes": {
-      "grab": {"distance": 280.1666382439641, "line_linked": {"opacity": 0.24678561733422155}},
-      "bubble": {"distance": 609.0579092260089, "size": 4, "duration": 0.3, "opacity": 1, "speed": 3},
-      "repulse": {"distance": 200, "duration": 0.4},
-      "push": {"particles_nb": 4},
-      "remove": {"particles_nb": 2}
-    }
-  },
-  "retina_detect": true
-});
-var count_particles, update;
-count_particles = document.querySelector('.js-count-particles');
-update = function () {
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);*/
-
 if ( WEBGL.isWebGLAvailable() === false ) {
 
   document.body.appendChild( WEBGL.getWebGLErrorMessage() );
@@ -74,9 +26,9 @@ function init() {
   container.className = 'particles-js';
   document.body.appendChild( container );
 
-  camera = new THREE.PerspectiveCamera( 125, window.innerWidth / window.innerHeight, 1, 1000 );
-  camera.position.y = 250; //changes how far back you can see i.e the particles towards horizon
-  camera.position.z = 500; //This is how close or far the particles are seen
+  camera = new THREE.PerspectiveCamera( 105, window.innerWidth / window.innerHeight, 1, 1000 );
+  camera.position.y = 400; //changes how far back you can see i.e the particles towards horizon
+  // camera.position.z = 500; //This is how close or far the particles are seen
 
   camera.rotation.x = -1000;
 
@@ -127,26 +79,18 @@ function init() {
 
   } );
 
-  //
 
   particles = new THREE.Points( geometry, material );
   scene.add( particles );
-
-  //
 
   renderer = new THREE.WebGLRenderer( { antialias: true } );
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize( window.innerWidth, window.innerHeight );
   container.appendChild( renderer.domElement );
 
-  // stats = new Stats();
-  // container.appendChild( stats.dom );
-
   document.addEventListener( 'mousemove', onDocumentMouseMove, false );
   document.addEventListener( 'touchstart', onDocumentTouchStart, false );
   document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
-  //
 
   window.addEventListener( 'resize', onWindowResize, false );
 
@@ -157,8 +101,6 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
-
-//
 
 function onDocumentMouseMove( event ) {
 

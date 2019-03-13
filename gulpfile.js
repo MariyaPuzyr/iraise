@@ -55,8 +55,7 @@ const paths = {
     src: "./src/img/svg/*.svg",
     dist: "./dist/img/sprites/",
     watch: "./src/img/svg/*.svg"
-  },
-  particles: "./node_modules/particles.js/particles.js"
+  }
 };
 /* ==================== */
 
@@ -118,7 +117,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-  return gulp.src([paths.particles, paths.scripts.src])
+  return gulp.src([paths.scripts.src])
       .pipe(concat('main.min.js'))
       .pipe(gulp.dest(paths.scripts.dist))
       .pipe(debug({
