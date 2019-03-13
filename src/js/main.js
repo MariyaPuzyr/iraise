@@ -1,5 +1,5 @@
 /* body animation */
-particlesJS("particles-js", {
+/*particlesJS("particles-js", {
   "particles": {
     "number": {"value": 400, "density": {"enable": true, "value_area": 800}},
     "color": {"value": ["#ff6000", "#972279"]},
@@ -45,9 +45,8 @@ count_particles = document.querySelector('.js-count-particles');
 update = function () {
   requestAnimationFrame(update);
 };
-requestAnimationFrame(update);
+requestAnimationFrame(update);*/
 
-/*
 if ( WEBGL.isWebGLAvailable() === false ) {
 
   document.body.appendChild( WEBGL.getWebGLErrorMessage() );
@@ -72,6 +71,7 @@ animate();
 function init() {
 
   container = document.createElement( 'div' );
+  container.className = 'particles-js';
   document.body.appendChild( container );
 
   camera = new THREE.PerspectiveCamera( 125, window.innerWidth / window.innerHeight, 1, 1000 );
@@ -235,7 +235,7 @@ function render() {
 
   count += 0.1;
 
-}*/
+}
 
 /* body animation end */
 
