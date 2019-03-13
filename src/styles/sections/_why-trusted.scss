@@ -1,8 +1,9 @@
 .why-trusted {
-  background-image: -moz-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  background-image: -webkit-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  background-image: -ms-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  padding-top: 105px;
+  background: rgb(236, 74, 152);
+  background: -moz-linear-gradient(top, rgba(236, 74, 152, 1) 0%, rgba(205, 82, 160, 1) 48%, rgba(111, 31, 164, 1) 100%);
+  background: -webkit-linear-gradient(top, rgba(236, 74, 152, 1) 0%, rgba(205, 82, 160, 1) 48%, rgba(111, 31, 164, 1) 100%);
+  background: linear-gradient(to bottom, rgba(236, 74, 152, 1) 0%, rgba(205, 82, 160, 1) 48%, rgba(111, 31, 164, 1) 100%);
+  padding-top: 100px;
   &__item {
     visibility: hidden;
     text-align: center;
@@ -13,7 +14,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin: auto auto 20px;
+    margin: auto auto 30px;
     max-width: 450px;
     transition: all 0.3s ease;
     p {
@@ -21,7 +22,7 @@
       margin-bottom: 20px;
     }
     a {
-      text-decoration: underline;
+      text-decoration: none;
       text-transform: uppercase;
       font-size: 18px;
       font-family: $font-exo;
@@ -33,11 +34,11 @@
       }
     }
     &s {
-      padding: 70px 0 115px;
+      padding: 75px 0 90px;
     }
     &--ico {
-      width: 117px;
-      height: 117px;
+      width: 118px;
+      height: 118px;
       border-radius: 100%;
       position: relative;
       display: flex;
@@ -87,12 +88,13 @@
       }
       &__item {
         transition: all 0.3s ease;
-        width: 117px;
-        height: 117px;
+        width: 118px;
+        height: 118px;
         stroke-dasharray: 1400;
         stroke-dashoffset: 20;
         border-radius: 100%;
         position: absolute;
+        border: 1px solid;
         top: -3px;
         left: -3px;
         animation: dash 5s linear alternate 1;
@@ -106,6 +108,9 @@
     }
     &:hover {
       cursor: pointer;
+      a {
+        text-decoration: underline;
+      }
       &.file-item {
         a {
           color: #52ac62;
@@ -168,9 +173,8 @@
 
 }
 
-
 @include adapt_to('large-phone') {
-  .why-trusted{
+  .why-trusted {
     padding-top: 50px;
     &__items {
       padding-bottom: 30px;

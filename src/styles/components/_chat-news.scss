@@ -3,7 +3,7 @@
   right: 60px;
   top: 50%;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   font-family: $font-exo;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,10 @@
   align-items: center;
   cursor: pointer;
   z-index: 1;
+  img {
+    width: 83px;
+    height: 83px;
+  }
 }
 
 .news {

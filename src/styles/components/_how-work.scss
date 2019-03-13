@@ -1,7 +1,22 @@
 .how-work {
-  padding-top: 105px;
-  padding-bottom: 75px;
+  padding-top: 98px;
+  padding-bottom: 105px;
+  background: #1d1d1d;
   overflow: hidden;
+  position: relative;
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: -moz-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
+    opacity: .25;
+    z-index: -1;
+  }
   &__item {
     display: flex;
     align-items: center;
@@ -9,19 +24,19 @@
     position: relative;
     &__description {
       font-size: 16px;
-      line-height: 30px;
+      line-height: 25px;
       font-family: $font-exo-l;
-      max-width: 310px;
+      max-width: 315px;
       margin-left: 30px;
     }
     &s {
       display: flex;
       justify-content: center;
-      margin-top: 130px;
+      margin-top: 90px;
       &__logo {
         display: flex;
-        width: 312px;
-        height: 312px;
+        width: 260px;
+        height: 260px;
         border-radius: 100%;
         align-items: center;
         background-image: -moz-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
@@ -30,8 +45,8 @@
         justify-content: center;
         z-index: 1;
         img {
-          width: 130px;
-          height: 132px;
+          width: 109px;
+          height: 110px;
           position: relative;
           z-index: 1;
         }
@@ -39,8 +54,8 @@
       &__border {
         &--small {
           border: 3px solid $default;
-          width: 250px;
-          height: 250px;
+          width: 205px;
+          height: 205px;
           position: relative;
           border-radius: 100%;
           display: flex;
@@ -48,8 +63,8 @@
           justify-content: center;
           &::before {
             content: '';
-            width: 239px;
-            height: 239px;
+            width: 196px;
+            height: 196px;
             background: $default;
             position: absolute;
             z-index: 1;
@@ -72,11 +87,11 @@
       .circle {
         overflow: hidden;
         position: absolute;
-        width: 180px;
-        height: 369px;
+        width: 155px;
+        height: 310px;
+        margin-top: -5px;
         right: -30px;
-        border-top-right-radius: 180px;
-        border-bottom-right-radius: 180px;
+        border-radius: 4px 180px 180px 4px;
         border: 3px solid #fff;
         @keyframes circle {
           to {
@@ -92,14 +107,14 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      font-size: 51px;
+      font-size: 43px;
       font-family: $font-exo-b;
       line-height: normal;
       position: absolute;
     }
     &.step {
       &-one {
-        margin-left: 60px;
+        margin-left: 55px;
         .how-work__item__img,
         .how-work__item__img::before,
         .circle--small,
@@ -113,22 +128,22 @@
 
         .how-work__item__position {
           color: rgb(235, 85, 23);
-          top: -60px;
+          top: -50px;
         }
         .step-position {
-          width: 161px;
-          height: 98px;
-          left: -155px;
-          top: 65px;
+          width: 134px;
+          height: 82px;
+          left: -129px;
+          top: 57px;
         }
         .icon {
-          width: 50px;
-          height: 53px;
+          width: 42px;
+          height: 45px;
           -webkit-mask-image: url('../img/svg/1step.svg');
         }
       }
       &-two {
-        margin-left: 155px;
+        margin-left: 138px;
         .how-work__item__img,
         .how-work__item__img::before,
         .circle--small,
@@ -142,22 +157,23 @@
 
         .how-work__item__position {
           color: rgb(206, 67, 57);
-          top: -60px;
+          top: -50px;
         }
         .step-position {
-          width: 149px;
-          height: 48px;
-          left: -145px;
-          top: 65px;
+          width: 124px;
+          height: 40px;
+          left: -125px;
+          top: 53px;
         }
         .icon {
-          width: 55px;
-          height: 55px;
+          width: 45px;
+          height: 45px;
           -webkit-mask-image: url('../img/svg/2step.svg');
         }
       }
       &-three {
-        margin-left: 160px;
+        margin-left: 135px;
+        top: 15px;
         .how-work__item__img,
         .how-work__item__img::before,
         .circle--small,
@@ -171,22 +187,23 @@
 
         .how-work__item__position {
           color: rgb(171, 39, 72);
-          top: -20px;
+          top: -13px;
         }
         .step-position {
-          width: 149px;
-          height: 46px;
-          left: -145px;
-          top: 25px;
+          width: 124px;
+          height: 39px;
+          left: -122px;
+          top: 20px;
         }
         .icon {
-          width: 54px;
-          height: 61px;
+          width: 45px;
+          height: 50px;
           -webkit-mask-image: url('../img/svg/3step.svg');
         }
       }
       &-four {
-        margin-left: 114px;
+        margin-left: 55px;
+        top: 17px;
         .how-work__item__img,
         .how-work__item__img::before,
         .circle--small,
@@ -200,41 +217,42 @@
 
         .how-work__item__position {
           color: rgb(162, 41, 107);
-          top: 32px;
+          top: 30px;
         }
         .step-position {
-          width: 161px;
-          height: 98px;
-          left: -160px;
-          top: -30px;
+          width: 134px;
+          height: 82px;
+          left: -132px;
+          top: -27px;
         }
         .icon {
-          width: 57px;
-          height: 57px;
+          width: 47px;
+          height: 47px;
           -webkit-mask-image: url('../img/svg/4step.svg');
         }
       }
     }
     &__img {
-      width: 133px;
-      height: 133px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      z-index: 1;
       &::after {
         content: '';
-        width: 100px;
-        height: 100px;
+        width: 83px;
+        height: 83px;
         border-radius: 50%;
         position: absolute;
         background: $default;
       }
       &::before {
         content: '';
-        width: 106px;
-        height: 106px;
+        width: 87px;
+        height: 87px;
         position: absolute;
         border-radius: 50%;
       }
@@ -245,8 +263,8 @@
       }
       .circle--small {
         position: absolute;
-        width: 110px;
-        height: 110px;
+        width: 89px;
+        height: 89px;
         border-radius: 50%;
         border: 1px solid $default;
       }
@@ -269,7 +287,8 @@
     display: flex;
     position: relative;
     align-items: center;
-    width: 312px;
+    width: 260px;
+    margin-left: 50px;
   }
 }
 

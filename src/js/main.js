@@ -1,16 +1,13 @@
 /* body animation */
-if ( WEBGL.isWebGLAvailable() === false ) {
-
-  document.body.appendChild( WEBGL.getWebGLErrorMessage() );
-
+if (WEBGL.isWebGLAvailable() === false) {
+  document.body.appendChild(WEBGL.getWebGLErrorMessage());
 }
 
-var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+var SEPARATION = 80, AMOUNTX = 20, AMOUNTY = 70;
 
 var container, stats;
 var camera, scene, renderer;
 
-var particles, count = 0;
 
 var mouseX = 0, mouseY = 0;
 
@@ -22,14 +19,12 @@ animate();
 
 function init() {
 
-  container = document.createElement( 'div' );
+  container = document.createElement('div');
   container.className = 'particles-js';
-  document.body.appendChild( container );
+  document.body.appendChild(container);
 
-  camera = new THREE.PerspectiveCamera( 105, window.innerWidth / window.innerHeight, 1, 1000 );
-  camera.position.y = 400; //changes how far back you can see i.e the particles towards horizon
-  // camera.position.z = 500; //This is how close or far the particles are seen
-
+  camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 10000);
+  camera.position.y = 500;
   camera.rotation.x = -1000;
 
   scene = new THREE.Scene();
@@ -38,61 +33,88 @@ function init() {
 
   var numParticles = AMOUNTX * AMOUNTY;
 
-  var positions = new Float32Array( numParticles * 3 );
-  var scales = new Float32Array( numParticles );
+  var positions = new Float32Array(numParticles * 3);
+  var scales = new Float32Array(numParticles);
 
   var i = 0, j = 0;
 
-  for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+  for (var ix = 0; ix < AMOUNTX; ix++) {
 
-    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+    for (var iy = 0; iy < AMOUNTY; iy++) {
 
-      positions[ i ] = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 ); // x
-      positions[ i + 1 ] = 0; // y
-      positions[ i + 2 ] = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 ); // z
+      positions[i] = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2); // x
+      positions[i + 1] = 0; // y
+      positions[i + 2] = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2); // z
 
-      scales[ j ] = 1;
+      scales[j] = 1;
 
       i += 3;
-      j ++;
+      j++;
 
     }
 
   }
 
-  var geometry = new THREE.BufferGeometry();
-  geometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
-  geometry.addAttribute( 'scale', new THREE.BufferAttribute( scales, 1 ) );
 
-  var color1 = new THREE.Color( 0x972279 );
-  var color2 = new THREE.Color( 0xff6000 );
-  var color4 = new THREE.Color( 151, 34, 121 );
-  var color5 = new THREE.Color( 255, 96, 0 );
+  var texture = new THREE.TextureLoader().load( "/img/circle.png" );
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+
+  var geometry = new THREE.BufferGeometry();
+  geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.addAttribute('scale', new THREE.BufferAttribute(scales, 1));
+
+  var color1 = new THREE.Color(0x972279);
+  var color2 = new THREE.Color(0xff6000);
+  var color4 = new THREE.Color(151, 34, 121);
+  var color5 = new THREE.Color(255, 96, 0);
   //
-  var material = new THREE.ShaderMaterial( {
+
+  var geom = new THREE.TorusKnotGeometry( 2.5, .5, 100, 16 );
+  geom.computeBoundingBox();
+  var vertexIndices = ['a', 'b', 'c'];
+  var face, vertex, normalized = new THREE.Vector3(), normalizedY = 0;
+  var bbox = geom.boundingBox;
+  var size = new THREE.Vector3().subVectors(bbox.max, bbox.min);
+  var red = new THREE.Color("red"), blue = new THREE.Color("blue");
+
+  for(var i = 0; i < geom.faces.length; i++){
+    face = geom.faces[i];
+    for (var v = 0; v < 3; v++){
+      vertex = geom.vertices[face[vertexIndices[v]]];
+      normalizedY = normalized.subVectors(vertex, bbox.min).divide(size).y;
+      face.vertexColors[v] = red.clone().lerp(blue, normalizedY);
+    }
+  }
+  var mat = new THREE.MeshBasicMaterial({vertexColors: THREE.VertexColors, wireframe: true});
+  var material = new THREE.ShaderMaterial({
 
     uniforms: {
-      color: { value: new THREE.Color( color1 ) },
+      // color: {value: new THREE.Color(color1)},
+      amplitude: { value: 1.0 },
+      color: { value: new THREE.Color( 0x972279 ) },
+      // color: { value: new THREE.Color( 0xff6000 ) },
+      texture: { value: texture }
     },
-    vertexShader: document.getElementById( 'vertexshader' ).textContent,
-    fragmentShader: document.getElementById( 'fragmentshader' ).textContent
+    vertexShader: document.getElementById('vertexshader').textContent,
+    fragmentShader: document.getElementById('fragmentshader').textContent
 
-  } );
+  });
 
 
-  particles = new THREE.Points( geometry, material );
-  scene.add( particles );
+  particles = new THREE.Points(geometry, material);
+  scene.add(particles);
 
-  renderer = new THREE.WebGLRenderer( { antialias: true } );
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  container.appendChild( renderer.domElement );
+  renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  container.appendChild(renderer.domElement);
 
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-  
-  window.addEventListener( 'resize', onWindowResize, false );
+  document.addEventListener('mousemove', onDocumentMouseMove, false);
+  document.addEventListener('touchstart', onDocumentTouchStart, false);
+  document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+  window.addEventListener('resize', onWindowResize, false);
 
 }
 
@@ -102,34 +124,34 @@ function onWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-function onDocumentMouseMove( event ) {
+function onDocumentMouseMove(event) {
 
   mouseX = event.clientX - windowHalfX;
   mouseY = event.clientY - windowHalfY;
 
 }
 
-function onDocumentTouchStart( event ) {
+function onDocumentTouchStart(event) {
 
-  if ( event.touches.length === 1 ) {
+  if (event.touches.length === 1) {
 
     event.preventDefault();
 
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+    mouseX = event.touches[0].pageX - windowHalfX;
+    mouseY = event.touches[0].pageY - windowHalfY;
 
   }
 
 }
 
-function onDocumentTouchMove( event ) {
+function onDocumentTouchMove(event) {
 
-  if ( event.touches.length === 1 ) {
+  if (event.touches.length === 1) {
 
     event.preventDefault();
 
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+    mouseX = event.touches[0].pageX - windowHalfX;
+    mouseY = event.touches[0].pageY - windowHalfY;
 
   }
 
@@ -140,7 +162,7 @@ function onDocumentTouchMove( event ) {
 function animate() {
   particles.rotation.x += 0.0005;
   particles.rotation.y -= 0.0005;
-  requestAnimationFrame( animate );
+  requestAnimationFrame(animate);
 
   render();
   // stats.update();
@@ -153,18 +175,18 @@ function render() {
 
   var i = 0, j = 0;
 
-  for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+  for (var ix = 0; ix < AMOUNTX; ix++) {
 
-    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+    for (var iy = 0; iy < AMOUNTY; iy++) {
 
-      positions[ i + 1 ] = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
-          ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+      positions[i + 1] = (Math.sin((ix + count) * 0.3) * 50) +
+          (Math.sin((iy + count) * 0.5) * 50);
 
-      scales[ j ] = ( Math.sin( ( ix + count ) * 1.3 ) + 1 ) * 8 +
-          ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 8;
+      scales[j] = (Math.sin((ix + count) * 1.3) + 1) * 8 +
+          (Math.sin((iy + count) * 0.5) + 1) * 8;
 
       i += 3;
-      j ++;
+      j++;
 
     }
 
@@ -173,7 +195,7 @@ function render() {
   particles.geometry.attributes.position.needsUpdate = true;
   particles.geometry.attributes.scale.needsUpdate = true;
 
-  renderer.render( scene, camera );
+  renderer.render(scene, camera);
 
   count += 0.1;
 
@@ -187,7 +209,7 @@ $('.mouse').click(function () {
     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
     if (target.length) {
       $('html,body').animate({
-        scrollTop: target.offset().top - 220
+        scrollTop: target.offset().top - 65
       }, 1000);
       return false;
     }
@@ -315,7 +337,8 @@ if ($(window).width() > 768) {
   $(function () {
     const carousel = Carousel.init();
   })
-};
+}
+;
 /* end carousel */
 
 /* slick slider */
@@ -333,36 +356,37 @@ if ($(window).width() < 768) {
       }
     ]
   });
-};
+}
+;
 
 
 /* init WOW */
 new WOW().init();
 
 
-function autoType(elementClass, typingSpeed){
+function autoType(elementClass, typingSpeed) {
   var thhis = $(elementClass);
   thhis = thhis.find(".team-title__typing");
   var text = thhis.text().trim().split('');
   var amntOfChars = text.length;
   var newString = "";
   thhis.text("|");
-  setTimeout(function(){
-    thhis.css("opacity",1);
+  setTimeout(function () {
+    thhis.css("opacity", 1);
     thhis.text("");
-    for(var i = 0; i < amntOfChars; i++){
-      (function(i,char){
-        setTimeout(function() {
+    for (var i = 0; i < amntOfChars; i++) {
+      (function (i, char) {
+        setTimeout(function () {
           newString += char;
           thhis.text(newString);
-        },i*typingSpeed);
-      })(i+1,text[i]);
+        }, i * typingSpeed);
+      })(i + 1, text[i]);
     }
-  },1500);
+  }, 1500);
 }
 
-$(document).ready(function(){
-  autoType(".team-title",200);
+$(document).ready(function () {
+  autoType(".team-title", 200);
 });
 
 $('.show-video__already-seen, .show-video__close').click(function () {

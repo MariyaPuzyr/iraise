@@ -28,11 +28,8 @@ body {
 }
 
 .outer-indent {
-	margin-top: 75px;
+	margin-top: 90px;
 	position: relative;
-	@include adapt_to('desktop') {
-		margin-top: 75px;
-	}
 }
 
 .default-btn {

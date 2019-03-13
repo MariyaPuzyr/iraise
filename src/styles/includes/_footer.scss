@@ -11,7 +11,7 @@
   &-logo {
     width: 159px;
     height: 55px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
   &__contact-info {
     li {
@@ -22,17 +22,19 @@
     li, a {
       display: flex;
       align-items: center;
-      color: $white;
+      color: rgba($white, .77);
     }
     a {
     }
     .phone {
       background: url('../img/phone-ico.png') no-repeat right;
       height: 20px;
+      opacity: .77;
     }
     .mail {
       background: url('../img/mail-ico.png') no-repeat;
       height: 15px;
+      opacity: .77;
     }
     span {
       width: 33px;
@@ -45,6 +47,7 @@
     line-height: 25px;
     font-family: $font-exo-l;
     padding-top: 5px;
+    color: rgba($white, .77);
   }
   &__menu {
     column-count: 3;
@@ -54,7 +57,7 @@
       position: relative;
       display: flex;
       align-items: baseline;
-      color: $white;
+      color: rgba($white, .75);
       font-size: 15px;
       line-height: 30px;
       font-family: $font-exo-l;
@@ -62,8 +65,8 @@
       &::before {
         content: '';
         mask-image: url('../img/svg/arrow.svg');
-        -webkit-mask-image:  url('../img/svg/arrow.svg');
-        background-color: $white;
+        -webkit-mask-image: url('../img/svg/arrow.svg');
+        background-color: rgba($white, .75);
         width: 6px;
         height: 11px;
         position: relative;
@@ -73,10 +76,10 @@
         margin-right: 10px;
       }
       &:hover {
-        color: $orange;
+        color: rgba($orange, .75);
         text-decoration: none;
         &::before {
-          background-color: $orange;
+          background-color: rgba($orange, .75);
         }
       }
     }
@@ -84,7 +87,7 @@
 }
 
 @media (max-width: 767px) {
-.footer__menu {
+  .footer__menu {
 
-}
+  }
 }
