@@ -95,6 +95,8 @@
       margin-top: 15px;
       &s {
         flex-wrap: wrap;
+        padding-top: 25px;
+        flex-direction: column-reverse;
       }
     }
     &__img {

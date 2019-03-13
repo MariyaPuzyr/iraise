@@ -147,18 +147,20 @@
   }
 }
 @include adapt_to('desktop') {
+  .outer-indent {
+    margin-top: 0;
+  }
   .navbar {
-    //padding-bottom: 20px;
+    z-index: 100;
     padding-top: 0;
     .container {
       max-width: 540px;
       margin: auto;
     }
     .right-position-menu {
-      position: absolute;
-      top: 15px;
-      right: 15px;
       margin: 0;
+      flex-direction: column;
+      justify-content: center;
     }
     &-brand {
       img {
@@ -167,24 +169,32 @@
     }
     .header-top{
       position: absolute;
-      top: 100px;
+      top: 45px;
       left: -150%;
       transition: all 0.3s ease;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 45px);
       justify-content: flex-end;
       flex-flow: column-reverse;
+      padding-top: 20px;
+      &::before {
+        display: none;
+      }
       &.show {
         position: absolute;
-        top: 110px;
+        top: 45px;
         left: 0;
         display: flex;
         width: 100%;
         background: rgba($default, .9);
       }
       &__items {
-        flex-flow: column-reverse;
         padding: 0 15px;
-        align-items: center;
+        position: relative;
+        .container {
+          flex-flow: column-reverse;
+          align-items: center !important;
+          text-align: center;
+        }
       }
       &__personal {
         width: 100%;
@@ -197,6 +207,9 @@
         flex-flow: row wrap;
         display: flex;
         justify-content: center;
+      }
+      &__support, &__social {
+        margin-bottom: 15px;
       }
     }
     &-nav {
@@ -218,7 +231,10 @@
       }
     }
     &-top {
-      
+      align-items: center !important;
+    }
+    .dropdown {
+      margin-right: 0;
     }
   }
 }

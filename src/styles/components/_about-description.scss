@@ -9,7 +9,7 @@
     &__body {
       display: flex;
       flex-direction: column;
-      margin-bottom: 25px;
+      margin-bottom: 60px;
       &::before {
         content: '';
         width: 23px;
@@ -18,12 +18,14 @@
       }
       h3 {
         margin: 0;
-        font-size: 20px;
-        line-height: 36px;
+        font-size: 18px;
+        line-height: normal;
         font-family: $font-exo-m;
       }
       p {
-        @extend .text;
+        font-size: 14px;
+        font-family: $font-exo;
+        margin-bottom: 20px;
       }
     }
   }
@@ -62,19 +64,21 @@
     &__body {
       h3 {
         margin-top: 40px;
-        font-size: 20px;
+        font-size: 18px;
         font-family: $font-exo-m;
         line-height: normal;
         margin-bottom: 10px;
       }
       p {
-        @extend .text;
+        font-size: 14px;
+        font-family: $font-exo;
+        margin-bottom: 20px;
       }
       .blockquote {
         position: relative;
         font-family: $font-exo-l;
         font-style: italic;
-        max-width: 645px;
+        max-width: 495px;
         display: flex;
         margin: auto;
         &::before {
