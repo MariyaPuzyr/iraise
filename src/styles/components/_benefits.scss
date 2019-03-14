@@ -1,9 +1,11 @@
 .benefits {
-  background-image: -moz-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  background-image: -webkit-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  background-image: -ms-linear-gradient( 0deg, rgb(118,37,80) 0%, rgb(188,58,81) 100%);
-  padding-top: 100px;
-  padding-bottom: 95px;
+  background: linear-gradient(309deg, rgba(0, 0, 0, .5) 0%, rgba(240, 255, 0, .5) 100%),
+              linear-gradient(180deg, rgba(236, 74, 152, 1) 0%, rgba(205, 82, 160, 1) 48%, rgba(111, 31, 164, 1) 100%);
+  background-blend-mode: soft-light;
+  padding: 100px 0;
+  @include adapt_to("large-phone") {
+    padding: 50px 0;
+  }
   &-body {
     @extend .stretch;
     padding-top: 70px;
@@ -13,9 +15,10 @@
     flex: 1 0 33.3333%;
     width: 33.3333%;
     text-align: center;
-    padding: 70px 35px 40px;
+    padding: 70px 35px 15px;
+    min-height: 292px;
     &:nth-child(odd) {
-      background: #551031;
+      background: rgba(#551031, .5);
     }
     @include adapt_to('desktop') {
       flex: 50%;
@@ -26,19 +29,21 @@
       &:nth-child(1),
       &:nth-child(4),
       &:nth-child(5) {
-        background: #551031;
+        background: rgba(#551031, .5);
       }
     }
     @include adapt_to('large-phone') {
       flex: 100%;
       width: 100%;
+      min-height: auto;
+      padding: 25px 10px;
       &:nth-child(1),
       &:nth-child(4),
       &:nth-child(5) {
         background: transparent;
       }
       &:nth-child(odd) {
-        background: #551031;
+        background: rgba(#551031, .5);
       }
     }
     .benefit-ico {

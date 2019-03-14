@@ -23,8 +23,7 @@
     margin: auto;
     position: relative;
     z-index: 10;
-    background: url('../img/big-logo.png');
-    background-size: cover;
+    background: url('../img/svg/big-logo.svg') no-repeat center;
     display: flex;
   }
   h1 {
