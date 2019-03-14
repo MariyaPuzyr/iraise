@@ -1,22 +1,9 @@
 .how-work {
   padding-top: 98px;
   padding-bottom: 105px;
-  background: #1d1d1d;
+  @extend .soft-light;
   overflow: hidden;
   position: relative;
-  &::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: -moz-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
-    background-image: -webkit-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
-    background-image: -ms-linear-gradient( 90deg, rgb(29,29,29) 0%, rgb(255,255,255) 100%);
-    opacity: .25;
-    z-index: -1;
-  }
   &__item {
     display: flex;
     align-items: center;
@@ -39,9 +26,9 @@
         height: 260px;
         border-radius: 100%;
         align-items: center;
-        background-image: -moz-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
-        background-image: -webkit-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
-        background-image: -ms-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+        background-image: -moz-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
+        background-image: -webkit-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
+        background-image: -ms-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
         justify-content: center;
         z-index: 1;
         img {
@@ -65,7 +52,7 @@
             content: '';
             width: 196px;
             height: 196px;
-            background: $default;
+            @extend .soft-light;
             position: absolute;
             z-index: 1;
             border-radius: 100%;
@@ -74,9 +61,9 @@
             content: '';
             width: 100%;
             height: 100%;
-            background-image: -moz-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
-            background-image: -webkit-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
-            background-image: -ms-linear-gradient(90deg, rgb(162, 41, 108) 0%, rgb(251, 94, 5) 100%);
+            background-image: -moz-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
+            background-image: -webkit-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
+            background-image: -ms-linear-gradient(90deg, rgb(122, 37, 146) 0%, rgb(251, 94, 5) 100%);
             position: absolute;
             top: 0;
             left: 0;
@@ -120,14 +107,13 @@
         .circle--small,
         .how-work__item__position,
         .icon {
-          background: rgb(235, 85, 23);
-          background: -moz-linear-gradient(top, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
-          background: -webkit-linear-gradient(top, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
-          background: linear-gradient(to bottom, rgba(235, 85, 23, 1) 0%, rgba(255, 119, 43, 1) 100%);
+          background: -moz-linear-gradient(top, rgba(255,119,43,1) 0%, rgba(235,85,23,1) 100%);
+          background: -webkit-linear-gradient(top, rgba(255,119,43,1) 0%,rgba(235,85,23,1) 100%);
+          background: linear-gradient(to bottom, rgba(255,119,43,1) 0%,rgba(235,85,23,1) 100%);
         }
 
         .how-work__item__position {
-          color: rgb(235, 85, 23);
+          //color: rgb(235, 85, 23);
           top: -50px;
         }
         .step-position {
@@ -149,14 +135,12 @@
         .circle--small,
         .how-work__item__position,
         .icon {
-          background: rgb(206, 67, 57);
-          background: -moz-linear-gradient(top, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
-          background: -webkit-linear-gradient(top, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
-          background: linear-gradient(to bottom, rgba(206, 67, 57, 1) 0%, rgba(225, 78, 36, 1) 100%);
+          background: -moz-linear-gradient(top, rgba(230,85,28,1) 0%, rgba(201,72,60,1) 100%);
+          background: -webkit-linear-gradient(top, rgba(230,85,28,1) 0%,rgba(201,72,60,1) 100%);
+          background: linear-gradient(to bottom, rgba(230,85,28,1) 0%,rgba(201,72,60,1) 100%);
         }
 
         .how-work__item__position {
-          color: rgb(206, 67, 57);
           top: -50px;
         }
         .step-position {
@@ -179,14 +163,12 @@
         .circle--small,
         .how-work__item__position,
         .icon {
-          background: rgb(171, 39, 72);
-          background: -moz-linear-gradient(top, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
-          background: -webkit-linear-gradient(top, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
-          background: linear-gradient(to bottom, rgba(171, 39, 72, 1) 0%, rgba(187, 62, 93, 1) 100%);
+          background: -moz-linear-gradient(top, rgba(181,63,82,1) 0%, rgba(156,52,109,1) 100%);
+          background: -webkit-linear-gradient(top, rgba(181,63,82,1) 0%,rgba(156,52,109,1) 100%);
+          background: linear-gradient(to bottom, rgba(181,63,82,1) 0%,rgba(156,52,109,1) 100%);
         }
 
         .how-work__item__position {
-          color: rgb(171, 39, 72);
           top: -13px;
         }
         .step-position {
@@ -209,14 +191,12 @@
         .circle--small,
         .how-work__item__position,
         .icon {
-          background: rgb(162, 41, 107);
-          background: -moz-linear-gradient(top, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
-          background: -webkit-linear-gradient(top, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
-          background: linear-gradient(to bottom, rgba(162, 41, 107, 1) 0%, rgba(176, 50, 91, 1) 100%);
+          background: -moz-linear-gradient(top, rgba(148,48,118,1) 0%, rgba(124,38,143,1) 100%);
+          background: -webkit-linear-gradient(top, rgba(148,48,118,1) 0%,rgba(124,38,143,1) 100%);
+          background: linear-gradient(to bottom, rgba(148,48,118,1) 0%,rgba(124,38,143,1) 100%);
         }
 
         .how-work__item__position {
-          color: rgb(162, 41, 107);
           top: 30px;
         }
         .step-position {
@@ -247,7 +227,7 @@
         height: 83px;
         border-radius: 50%;
         position: absolute;
-        background: $default;
+        @extend .soft-light;
       }
       &::before {
         content: '';
@@ -293,8 +273,8 @@
 }
 
 @media (max-width: 991px) {
-  .how-work{
-    &__item{
+  .how-work {
+    &__item {
       &s {
         flex-direction: column;
         margin-top: 30px;
