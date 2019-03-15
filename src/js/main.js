@@ -357,7 +357,7 @@ if ($(window).width() < 768) {
     ]
   });
 }
-;
+
 
 
 /* init WOW */
@@ -391,4 +391,12 @@ $(document).ready(function () {
 
 $('.show-video__already-seen, .show-video__close').click(function () {
   $('.show-video').hide();
+});
+
+
+/* slick slider date */
+$('.single-item').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1
 });

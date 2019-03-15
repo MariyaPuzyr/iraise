@@ -1,6 +1,8 @@
 .about-info{
   position: relative;
-  @extend .soft-light;
+  //@extend .soft-light;
+  background: url('../img/back.jpg') center no-repeat;
+  background-size: cover;
   &__item{
     margin-left: 100px;
     margin-bottom: 115px;
@@ -12,8 +14,8 @@
     }
   }
   &__img {
-    width: 427px;
-    height: 480px;
+    width: 425px;
+    height: 521px;
     display: flex;
     margin: auto auto 0;
   }
