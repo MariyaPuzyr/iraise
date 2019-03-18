@@ -56,7 +56,7 @@ function init() {
   }
 
 
-  var texture = new THREE.TextureLoader().load( "/img/circle.png" );
+  var texture = new THREE.TextureLoader().load("/img/circle.png");
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
 
@@ -70,7 +70,7 @@ function init() {
   var color5 = new THREE.Color(255, 96, 0);
   //
 
-  var geom = new THREE.TorusKnotGeometry( 2.5, .5, 100, 16 );
+  var geom = new THREE.TorusKnotGeometry(2.5, .5, 100, 16);
   geom.computeBoundingBox();
   var vertexIndices = ['a', 'b', 'c'];
   var face, vertex, normalized = new THREE.Vector3(), normalizedY = 0;
@@ -78,9 +78,9 @@ function init() {
   var size = new THREE.Vector3().subVectors(bbox.max, bbox.min);
   var red = new THREE.Color("red"), blue = new THREE.Color("blue");
 
-  for(var i = 0; i < geom.faces.length; i++){
+  for (var i = 0; i < geom.faces.length; i++) {
     face = geom.faces[i];
-    for (var v = 0; v < 3; v++){
+    for (var v = 0; v < 3; v++) {
       vertex = geom.vertices[face[vertexIndices[v]]];
       normalizedY = normalized.subVectors(vertex, bbox.min).divide(size).y;
       face.vertexColors[v] = red.clone().lerp(blue, normalizedY);
@@ -91,10 +91,10 @@ function init() {
 
     uniforms: {
       // color: {value: new THREE.Color(color1)},
-      amplitude: { value: 1.0 },
-      color: { value: new THREE.Color( 0x972279 ) },
+      amplitude: {value: 1.0},
+      color: {value: new THREE.Color(0x972279)},
       // color: { value: new THREE.Color( 0xff6000 ) },
-      texture: { value: texture }
+      texture: {value: texture}
     },
     vertexShader: document.getElementById('vertexshader').textContent,
     fragmentShader: document.getElementById('fragmentshader').textContent
@@ -359,7 +359,6 @@ if ($(window).width() < 768) {
 }
 
 
-
 /* init WOW */
 new WOW().init();
 
@@ -398,5 +397,146 @@ $('.show-video__already-seen, .show-video__close').click(function () {
 $('.single-item').slick({
   infinite: true,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 1,
+  prevArrow: '<button type="button" class="slick-prev"></button>',
+  nextArrow: '<button type="button" class="slick-next"></button>'
 });
+
+/* month grafic */
+Highcharts.chart('month-grafic', {
+  chart: {
+    styledMode: true,
+    type: 'area',
+    style: {
+      fontFamily: 'serif'
+    }
+  },
+  title: {
+    text: '',
+  },
+
+  yAxis: {
+    title: {
+      text: ''
+    },
+    labels: {
+      format: '{value}%'
+    },
+  },
+  xAxis: {
+    categories: ['Янв', 'Февр', 'Март', 'Апр', 'Май', 'Июнь', 'Июль', 'Авг', 'Сен', 'Окт', 'Нояб', 'Дек'],
+    title: {
+      enabled: false
+    }
+  },
+  tooltip: {
+    valueSuffix: '%',
+    split: false,
+    borderRadius: 30,
+    distance: 30,
+    padding: 10,
+
+    shared: true
+
+  },
+  legend: {
+    enabled: false
+  },
+
+  series: [{
+    name: 'Доход',
+    marker: {
+      symbol: 'url(../img/grafic-ico.png)',
+      width: 20,
+      height: 20
+    },
+    data: [25, 56, 52, 75, 35, 80, 60],
+    dashStyle: 'longdash'
+
+  }],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 930
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
+});
+/* month grafic end */
+
+/* days grafic */
+Highcharts.chart('days-grafic', {
+  chart: {
+    styledMode: true,
+    type: 'area'
+  },
+  title: {
+    text: '',
+  },
+
+  yAxis: {
+    title: {
+      text: ''
+    },
+    labels: {
+      format: '{value}%'
+    },
+  },
+  xAxis: {
+    categories: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    title: {
+      enabled: false
+    }
+  },
+  tooltip: {
+    valueSuffix: '%',
+    split: false,
+    borderRadius: 30,
+    distance: 30,
+    padding: 10,
+
+    shared: true
+
+  },
+  legend: {
+    enabled: false
+  },
+
+  series: [{
+    name: 'Доход',
+    marker: {
+      symbol: 'url(../img/grafic-ico.png)',
+      width: 20,
+      height: 20
+    },
+    data: [25, 56, 52, 75, 35, 80, 60],
+    dashStyle: 'longdash'
+
+  }],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 930
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
+});
+/* days grafic end */

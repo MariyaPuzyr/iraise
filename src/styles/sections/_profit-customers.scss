@@ -40,10 +40,19 @@
           font-size: 18px;
           font-family: $font-exo;
           align-items: baseline;
+          line-height: 18px;
+          display: flex;
+          padding: 6px 6px 10px 0;
         }
       }
       .persent {
         font-size: 14px;
+      }
+    }
+    @include adapt_to('large-phone') {
+      flex-wrap: wrap;
+      &--profit {
+        margin-right: 10px;
       }
     }
   }

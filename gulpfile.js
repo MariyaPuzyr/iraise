@@ -139,7 +139,8 @@ gulp.task('libs', function () {
     './node_modules/jquery/dist/jquery.min.js',
     './node_modules/slick-carousel/slick/slick.min.js',
     './node_modules/bootstrap/dist/js/bootstrap.min.js',
-    './node_modules/wow.js/dist/wow.min.js'
+    './node_modules/wow.js/dist/wow.min.js',
+    './node_modules/highcharts/highcharts.js'
   ])
       .pipe(concat('libs.min.js'))
       .pipe(gulp.dest(paths.scripts.dist))
