@@ -57,6 +57,12 @@ const paths = {
     watch: "./src/img/svg/*.svg"
   }
 };
+
+gulp.task('copy-data', function() {
+  return gulp.src(files.data_src, { base: './' })
+      .pipe(gulp.dest(files.distribution_dest))
+      .pipe(notify({message: 'Data copied for distribution!'}))
+});
 /* ==================== */
 
 /* Auto browser reload */
