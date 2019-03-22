@@ -28,7 +28,7 @@ const paths = {
       "./src/views/index.pug",
       "./src/views/pages/*.pug"
     ],
-    dist: "./dist/",
+    dist: "./dist/**",
     fonts: "./dist/fonts",
     watch: "./src/views/**/*.pug"
   },
@@ -55,13 +55,13 @@ const paths = {
     src: "./src/img/svg/*.svg",
     dist: "./dist/img/sprites/",
     watch: "./src/img/svg/*.svg"
-  }
+  },
+  result: "../test"
 };
 
 gulp.task('copy-data', function() {
-  return gulp.src(files.data_src, { base: './' })
-      .pipe(gulp.dest(files.distribution_dest))
-      .pipe(notify({message: 'Data copied for distribution!'}))
+  return gulp.src(paths.views.dist)
+      .pipe(gulp.dest(paths.result))
 });
 /* ==================== */
 
@@ -222,7 +222,7 @@ gulp.task('watch',
 );
 
 gulp.task('build',
-    gulp.series(['styles', 'scripts', 'images', 'sprites', 'libs'])
+    gulp.series(['styles', 'scripts', 'images', 'sprites', 'libs', 'copy-data'])
 );
 
 gulp.task('default', gulp.series('watch'));
